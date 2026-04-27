@@ -3,8 +3,8 @@
     "question": "puddle",
     "answer": "лужа",
     "interval": 1,
-    "next_date": "2026-04-25",
-    "ratio": 2.5
+    "next_date": "2026-04-26",
+    "ratio": 2.3
   },
   {
     "question": "puddle",
@@ -23,9 +23,9 @@
   {
     "question": "puddle",
     "answer": "лужа",
-    "interval": 3,
-    "next_date": "2026-04-24",
-    "ratio": 2.5
+    "interval": 1,
+    "next_date": "2026-04-26",
+    "ratio": 2.3
   },
   {
     "question": "puddle",
