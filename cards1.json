@@ -3,40 +3,40 @@
     "question": "puddle",
     "answer": "лужа",
     "interval": 1,
-    "next_date": "2026-04-26",
-    "ratio": 2.3
+    "next_date": "2026-04-25",
+    "ratio": 2.5
   },
   {
-    "question": "puddle",
-    "answer": "лужа",
+    "question": "add",
+    "answer": "добавить",
     "interval": 1,
     "next_date": "2026-04-26",
     "ratio": 2.5
   },
   {
-    "question": "puddle",
-    "answer": "лужа",
+    "question": "delete",
+    "answer": "удалить",
     "interval": 1,
     "next_date": "2026-04-27",
     "ratio": 2.5
   },
   {
-    "question": "puddle",
-    "answer": "лужа",
-    "interval": 1,
-    "next_date": "2026-04-26",
-    "ratio": 2.3
+    "question": "break",
+    "answer": "сломать",
+    "interval": 3,
+    "next_date": "2026-04-24",
+    "ratio": 2.5
   },
   {
-    "question": "puddle",
-    "answer": "лужа",
+    "question": "some",
+    "answer": "несколько",
     "interval": 8,
     "next_date": "2026-04-26",
     "ratio": 2.5
   },
   {
-    "question": "puddle",
-    "answer": "лужа",
+    "question": "pig",
+    "answer": "свинья",
     "interval": 1,
     "next_date": "2026-04-26",
     "ratio": 2.5
