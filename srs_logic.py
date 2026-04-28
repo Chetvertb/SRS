@@ -51,7 +51,6 @@ def repeat_card(cards):
             i['next_date'] = str(today + td(days=i['interval']))
     
     
-    utils.save_cards(cards)
 
 
 def add_card(cards):
@@ -69,8 +68,7 @@ def add_card(cards):
             }
         cards.append(d)
     
-    flag = True
-    while flag:
+    while True:
         new_card()
         change = input('''
                        Введите 
@@ -78,8 +76,7 @@ def add_card(cards):
                        2 Выйти
                        ''')
         if change == '2':
-            flag = False
-    utils.save_cards(cards)
+            break
 
 
 
@@ -99,10 +96,6 @@ def look(cards):
         print("\nОтвет:")
         print(i['answer'])
 
-        delete = input('\n Нажмите Enter, для показа следующей карточки\n' \
-        '1 для удаления этой')
-        if delete:
-            delete = input('\n Уверены что хотите удалить данную карточку\nДа: для удаления\nНет: продолжить\n')
-            if delete == 'Да':
-                cards.remove(i)
-    utils.save_cards(cards)
+        delete = input('\nУдалить эту карточку? Введите "да" для удаления, или любое другое слово для продолжения: ')
+        if delete.lower() == 'да':
+            cards.remove(i)

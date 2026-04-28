@@ -3,42 +3,42 @@
     "question": "puddle",
     "answer": "лужа",
     "interval": 1,
-    "next_date": "2026-04-29",
+    "next_date": "2026-04-25",
+    "ratio": 2.5
+  },
+  {
+    "question": "add",
+    "answer": "добавить",
+    "interval": 1,
+    "next_date": "2026-04-26",
     "ratio": 2.5
   },
   {
     "question": "delete",
     "answer": "удалить",
-    "interval": 2,
-    "next_date": "2026-04-30",
-    "ratio": 2.3
+    "interval": 1,
+    "next_date": "2026-04-27",
+    "ratio": 2.5
   },
   {
     "question": "break",
     "answer": "сломать",
-    "interval": 6,
-    "next_date": "2026-05-04",
-    "ratio": 2.3
+    "interval": 3,
+    "next_date": "2026-04-24",
+    "ratio": 2.5
   },
   {
     "question": "some",
     "answer": "несколько",
-    "interval": 18,
-    "next_date": "2026-05-16",
-    "ratio": 2.3
+    "interval": 8,
+    "next_date": "2026-04-26",
+    "ratio": 2.5
   },
   {
     "question": "pig",
     "answer": "свинья",
-    "interval": 2,
-    "next_date": "2026-04-30",
-    "ratio": 2.3
-  },
-  {
-    "question": "лдвфоа",
-    "answer": "11111111111",
     "interval": 1,
-    "next_date": "2026-04-29",
+    "next_date": "2026-04-26",
     "ratio": 2.5
   }
 ]

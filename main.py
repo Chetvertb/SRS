@@ -15,6 +15,7 @@ def main():
     3 for look all cards
                 ''')
     d[key](cards)
+    utils.save_cards(cards)
 
 
 
