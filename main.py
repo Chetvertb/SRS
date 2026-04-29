@@ -18,9 +18,9 @@ class SRSApp:
         self.look_button = tk.Button(self.root, text="Посмотреть все карточки", command=self.look_cards)
 
         # Размещение кнопок
-        self.repeat_button.pack(pady=10)
-        self.add_button.pack(pady=10)
-        self.look_button.pack(pady=10)
+        self.repeat_button.pack(padx=10)
+        self.add_button.pack(padx=10)
+        self.look_button.pack(padx=10)
 
     def repeat_cards(self):
         if not self.cards:
@@ -28,15 +28,29 @@ class SRSApp:
             return
         
         today = date.today()
-        for card in self.cards:
-            d = date.fromisoformat(card['next_date'])
-            if d <= today:
-                question = card["question"]
-                answer = card["answer"]
-                self.show_question_answer(question, answer, card)
+        def get_next_card():
+            for card in self.cards:
+                d = date.fromisoformat(card['next_date'])
+                if d <= today:
+                    question = card["question"]
+                    answer = card["answer"]
+                    yield self.show_question_answer(question, answer, card)
 
-    def show_question_answer(self, question, answer, card):
-        def mark_card():
+        def show_next_card():
+            result = next(self.card_generator, "cards ended")
+            if result == "cards ended":
+                messagebox.showinfo("Информация", "Нет карточек для повторения.")
+            else:
+                return result
+            
+        self.next_button = tk.Button(self.root, text="Следующая", command=show_next_card)
+        self.next_button.pack(pady=10)
+
+        
+        self.card_generator = get_next_card()
+        self.show_next_card()
+
+    def mark_card(self,answer,  mark_entry, card, answer_label):
             mark = int(mark_entry.get())
             if 2 <= mark <= 5:
                 interval, ratio = srs_logic.size_ratio(mark, card['interval'], card['ratio'])
@@ -45,8 +59,13 @@ class SRSApp:
                 card['next_date'] = str(date.today() + timedelta(days=card['interval']))
                 utils.save_cards(self.cards)
                 answer_label.config(text=f"Ответ: {answer}")
+
             else:
-                messagebox.showerror("Ошибка", "Введите оценку от 2 до 5.")
+                messagebox.showerror("Ошибка", "Введите оценку от 2 до 5.")       
+            
+
+    def show_question_answer(self, question, answer, card):
+        
 
         question_label = tk.Label(self.root, text=f"Вопрос: {question}")
         question_label.pack()
@@ -60,7 +79,7 @@ class SRSApp:
         mark_entry = tk.Entry(self.root)
         mark_entry.pack()
 
-        mark_button = tk.Button(self.root, text="Оценить", command=mark_card)
+        mark_button = tk.Button(self.root, text="Оценить", command=lambda: self.mark_card(answer, mark_entry, card, answer_label))
         mark_button.pack()
 
     def add_card(self):
@@ -78,6 +97,11 @@ class SRSApp:
                 self.cards.append(card)
                 utils.save_cards(self.cards)
                 messagebox.showinfo("Успех", "Карточка добавлена!")
+                question_label.destroy()
+                answer_label.destroy()
+                question_entry.destroy()
+                answer_entry.destroy()
+                save_button.destroy()
             else:
                 messagebox.showerror("Ошибка", "Заполните все поля.")
 
@@ -95,6 +119,7 @@ class SRSApp:
 
         save_button = tk.Button(self.root, text="Сохранить карточку", command=save_card)
         save_button.pack()
+
 
     def look_cards(self):
         if not self.cards:

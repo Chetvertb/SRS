@@ -3,21 +3,21 @@
     "question": "puddle",
     "answer": "лужа",
     "interval": 1,
-    "next_date": "2026-04-25",
+    "next_date": "2026-04-23",
     "ratio": 2.5
   },
   {
     "question": "add",
     "answer": "добавить",
     "interval": 1,
-    "next_date": "2026-04-26",
+    "next_date": "2026-04-25",
     "ratio": 2.5
   },
   {
     "question": "delete",
     "answer": "удалить",
     "interval": 1,
-    "next_date": "2026-04-27",
+    "next_date": "2026-04-25",
     "ratio": 2.5
   },
   {
@@ -44,6 +44,34 @@
   {
     "question": "Что такое осень",
     "answer": "Это небо, плачущее небо под ногами",
+    "interval": 1,
+    "next_date": "2026-04-30",
+    "ratio": 2.5
+  },
+  {
+    "question": "daf",
+    "answer": "fa",
+    "interval": 1,
+    "next_date": "2026-04-30",
+    "ratio": 2.5
+  },
+  {
+    "question": "xc",
+    "answer": "cxzc",
+    "interval": 1,
+    "next_date": "2026-04-30",
+    "ratio": 2.5
+  },
+  {
+    "question": "afds",
+    "answer": "fda",
+    "interval": 1,
+    "next_date": "2026-04-30",
+    "ratio": 2.5
+  },
+  {
+    "question": "fads",
+    "answer": "fadsf",
     "interval": 1,
     "next_date": "2026-04-30",
     "ratio": 2.5
