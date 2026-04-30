@@ -22,46 +22,95 @@ class SRSApp:
         self.add_button.pack(padx=10)
         self.look_button.pack(padx=10)
 
+        self.card_generator = None
+
+        self.card_frame = tk.Frame(self.root)
+        self.card_frame.pack(pady=20)
+
+        self.question_label = tk.Label(self.card_frame, text="", font=("Arial", 16))
+        self.question_label.pack(pady=5)
+
+        self.answer_label = tk.Label(self.card_frame, text="", font=("Arial", 14))
+        self.answer_label.pack(pady=5)
+
+        self.mark_entry = tk.Entry(self.card_frame)
+        self.mark_entry.pack(pady=5)
+
+        self.mark_button = tk.Button(
+            self.card_frame,
+            text="Оценить",
+            command=self.mark_current_card
+        )
+        self.mark_button.pack(pady=5)
+
+        self.next_button = tk.Button(
+            self.card_frame,
+            text="Следующая",
+            command=self.show_next_card
+        )
+        self.next_button.pack(pady=5)
+
     def repeat_cards(self):
         if not self.cards:
             messagebox.showinfo("Информация", "Карточки не добавлены.")
             return
         
         today = date.today()
-        def get_next_card():
-            for card in self.cards:
-                d = date.fromisoformat(card['next_date'])
-                if d <= today:
-                    question = card["question"]
-                    answer = card["answer"]
-                    yield self.show_question_answer(question, answer, card)
-
-        def show_next_card():
-            result = next(self.card_generator, "cards ended")
-            if result == "cards ended":
-                messagebox.showinfo("Информация", "Нет карточек для повторения.")
-            else:
-                return result
+        self.card_generator = (card for card in self.cards if date.fromisoformat(card['next_date']) <= today)
             
-        self.next_button = tk.Button(self.root, text="Следующая", command=show_next_card)
-        self.next_button.pack(pady=10)
-
-        
-        self.card_generator = get_next_card()
         self.show_next_card()
 
-    def mark_card(self,answer,  mark_entry, card, answer_label):
-            mark = int(mark_entry.get())
-            if 2 <= mark <= 5:
-                interval, ratio = srs_logic.size_ratio(mark, card['interval'], card['ratio'])
-                card['interval'] = interval
-                card['ratio'] = ratio
-                card['next_date'] = str(date.today() + timedelta(days=card['interval']))
-                utils.save_cards(self.cards)
-                answer_label.config(text=f"Ответ: {answer}")
+    def show_next_card(self):
+        self.current_card = next(self.card_generator, None)
 
-            else:
-                messagebox.showerror("Ошибка", "Введите оценку от 2 до 5.")       
+        if self.current_card is None:
+            self.question_label.config(text="")
+            self.answer_label.config(text="")
+            self.mark_entry.delete(0, tk.END)
+            messagebox.showinfo("Информация", "Нет карточек для повторения.")
+            return
+        
+        self.question_label.config(
+            text=f"Вопрос: {self.current_card['question']}"
+        )
+
+        self.answer_label.config(text="Ответ: не показан")
+        self.mark_entry.delete(0, tk.END)
+
+    def mark_current_card(self):
+        if self.current_card is None:
+            messagebox.showinfo("Информация", "Сначала выберите карточку.")
+            return
+
+        value = self.mark_entry.get()
+
+        if not value.isdigit():
+            messagebox.showerror("Ошибка", "Введите число от 2 до 5.")
+            return
+
+        mark = int(value)
+
+        if not 2 <= mark <= 5:
+            messagebox.showerror("Ошибка", "Введите оценку от 2 до 5.")
+            return
+
+        interval, ratio = srs_logic.size_ratio(
+            mark,
+            self.current_card["interval"],
+            self.current_card["ratio"]
+        )
+
+        self.current_card["interval"] = interval
+        self.current_card["ratio"] = ratio
+        self.current_card["next_date"] = str(
+            date.today() + timedelta(days=interval)
+        )
+
+        utils.save_cards(self.cards)
+
+        self.answer_label.config(
+            text=f"Ответ: {self.current_card['answer']}"
+        )      
             
 
     def show_question_answer(self, question, answer, card):
