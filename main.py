@@ -23,10 +23,12 @@ class SRSApp:
         self.look_button.pack(padx=10)
 
         self.card_generator = None
+        self.card_frame = None
+        self.current_card = None
 
-        self.card_frame = tk.Frame(self.root)
-        self.card_frame.pack(pady=20)
+        
 
+    def create_repeat_frame(self):
         self.question_label = tk.Label(self.card_frame, text="", font=("Arial", 16))
         self.question_label.pack(pady=5)
 
@@ -57,7 +59,8 @@ class SRSApp:
         
         today = date.today()
         self.card_generator = (card for card in self.cards if date.fromisoformat(card['next_date']) <= today)
-            
+        if self.card_frame is None:
+            self.create_repeat_frame()
         self.show_next_card()
 
     def show_next_card(self):
