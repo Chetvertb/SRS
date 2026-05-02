@@ -177,11 +177,11 @@ class SRSApp:
         if not self.cards:
             messagebox.showinfo("Информация", "Карточки не добавлены.")
             return
-
-        for card in self.cards:
-            question = card["question"]
-            answer = card["answer"]
-            self.show_question_answer(question, answer, card)
+        
+        self.card_generator = (card for card in self.cards)
+        if self.card_frame is None:
+            self.create_repeat_frame()
+        self.show_next_card()
 
 if __name__ == "__main__":
     root = tk.Tk()

@@ -2,57 +2,57 @@
   {
     "question": "puddle",
     "answer": "лужа",
-    "interval": 1,
-    "next_date": "2026-05-02",
-    "ratio": 2.5
+    "interval": 2,
+    "next_date": "2026-05-04",
+    "ratio": 2.3
   },
   {
     "question": "add",
     "answer": "добавить",
-    "interval": 1,
-    "next_date": "2026-05-02",
-    "ratio": 2.5
+    "interval": 2,
+    "next_date": "2026-05-04",
+    "ratio": 2.7
   },
   {
     "question": "delete",
     "answer": "удалить",
-    "interval": 1,
-    "next_date": "2026-05-01",
-    "ratio": 2.5
+    "interval": 2,
+    "next_date": "2026-05-04",
+    "ratio": 2.7
   },
   {
     "question": "break",
     "answer": "сломать",
-    "interval": 2,
-    "next_date": "2026-05-02",
-    "ratio": 2.3
+    "interval": 5,
+    "next_date": "2026-05-07",
+    "ratio": 2.5
   },
   {
     "question": "some",
     "answer": "несколько",
-    "interval": 2,
-    "next_date": "2026-05-02",
-    "ratio": 2.3
+    "interval": 5,
+    "next_date": "2026-05-07",
+    "ratio": 2.5
   },
   {
     "question": "pig",
     "answer": "свинья",
-    "interval": 1,
-    "next_date": "2026-04-26",
-    "ratio": 2.5
+    "interval": 2,
+    "next_date": "2026-05-04",
+    "ratio": 2.7
   },
   {
     "question": "Что такое осень",
     "answer": "Это небо, плачущее небо под ногами",
-    "interval": 1,
-    "next_date": "2026-04-30",
-    "ratio": 2.5
+    "interval": 5,
+    "next_date": "2026-05-07",
+    "ratio": 2.9000000000000004
   },
   {
     "question": "daf",
     "answer": "fa",
     "interval": 1,
-    "next_date": "2026-04-30",
+    "next_date": "2026-05-03",
     "ratio": 2.5
   },
   {
