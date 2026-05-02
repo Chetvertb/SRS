@@ -52,6 +52,17 @@ class SRSApp:
         )
         self.next_button.pack(pady=5)
 
+        self.delete_button = tk.Button(self.card_frame, text="Удалить карточку", command=self.delete_card)
+        self.delete_button.pack(pady=5)
+
+    def delete_card(self):
+        card = self.current_card['question']
+        self.cards.remove(self.current_card)
+        messagebox.showinfo("Удаление", f"Карточка {card} успешно удалена")
+        utils.save_cards(self.cards)
+        self.show_next_card()
+
+
     def repeat_cards(self):
         if not self.cards:
             messagebox.showinfo("Информация", "Карточки не добавлены.")

@@ -54,26 +54,5 @@
     "interval": 1,
     "next_date": "2026-05-03",
     "ratio": 2.5
-  },
-  {
-    "question": "xc",
-    "answer": "cxzc",
-    "interval": 1,
-    "next_date": "2026-04-30",
-    "ratio": 2.5
-  },
-  {
-    "question": "afds",
-    "answer": "fda",
-    "interval": 1,
-    "next_date": "2026-04-30",
-    "ratio": 2.5
-  },
-  {
-    "question": "fads",
-    "answer": "fadsf",
-    "interval": 1,
-    "next_date": "2026-04-30",
-    "ratio": 2.5
   }
 ]
