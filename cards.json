@@ -2,23 +2,23 @@
   {
     "question": "puddle",
     "answer": "лужа",
-    "interval": 2,
-    "next_date": "2026-05-04",
-    "ratio": 2.3
+    "interval": 1,
+    "next_date": "2026-05-05",
+    "ratio": 2.5
   },
   {
     "question": "add",
     "answer": "добавить",
-    "interval": 2,
-    "next_date": "2026-05-04",
-    "ratio": 2.7
+    "interval": 1,
+    "next_date": "2026-05-05",
+    "ratio": 2.5
   },
   {
     "question": "delete",
     "answer": "удалить",
-    "interval": 2,
-    "next_date": "2026-05-04",
-    "ratio": 2.7
+    "interval": 12,
+    "next_date": "2026-05-16",
+    "ratio": 2.5
   },
   {
     "question": "break",
@@ -37,9 +37,9 @@
   {
     "question": "pig",
     "answer": "свинья",
-    "interval": 2,
-    "next_date": "2026-05-04",
-    "ratio": 2.7
+    "interval": 5,
+    "next_date": "2026-05-09",
+    "ratio": 2.5
   },
   {
     "question": "Что такое осень",
@@ -52,7 +52,42 @@
     "question": "daf",
     "answer": "fa",
     "interval": 1,
-    "next_date": "2026-05-03",
+    "next_date": "2026-05-05",
+    "ratio": 2.5
+  },
+  {
+    "question": "11111111111",
+    "answer": "223",
+    "interval": 1,
+    "next_date": "2026-05-05",
+    "ratio": 2.5
+  },
+  {
+    "question": "fdasf",
+    "answer": "gaa",
+    "interval": 1,
+    "next_date": "2026-05-05",
+    "ratio": 2.5
+  },
+  {
+    "question": "fadg",
+    "answer": "g",
+    "interval": 1,
+    "next_date": "2026-05-05",
+    "ratio": 2.5
+  },
+  {
+    "question": "dasf",
+    "answer": "ad",
+    "interval": 1,
+    "next_date": "2026-05-05",
+    "ratio": 2.5
+  },
+  {
+    "question": "fdas",
+    "answer": "ff",
+    "interval": 1,
+    "next_date": "2026-05-05",
     "ratio": 2.5
   }
 ]
